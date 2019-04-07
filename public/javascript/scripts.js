@@ -1,5 +1,5 @@
-// Initialize Firebase
-var config = {
+// 1. Initialize Firebase
+const config = {
   apiKey: 'AIzaSyCbaDBRoB73Wo-g9jMMjRNXXB7l8PuQjZQ',
   authDomain: 'project-one-f75c6.firebaseapp.com',
   databaseURL: 'https://project-one-f75c6.firebaseio.com',
@@ -9,21 +9,21 @@ var config = {
 };
 firebase.initializeApp(config);
 
-var database = firebase.database();
+const database = firebase.database();
 
 // 2. Button for adding users
 $('#add-user-btn').on('click', (event) => {
   event.preventDefault();
 
   // Grabs user input
-  var userName = $('#name-input').val().trim();
-  var userBirth = $('#birth-input').val().trim();
+  const userName = $('#name-input').val().trim();
+  const userBirth = $('#birth-input').val().trim();
 
   // user Info
   // console.log('userStart: ' + userStart);
 
   // Creates local "newuser" object for holding user data
-  var newuser = {
+  const newuser = {
     name: userName,
     birth: userBirth,
     dateAdded: firebase.database.ServerValue.TIMESTAMP,
