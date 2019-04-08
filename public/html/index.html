@@ -19,9 +19,20 @@
       <div class="row mt-4">
         <div class="col-sm-12 col-md-6 offset-md-3">
           <div class="jumbotron">
-            <img class="img-fluid" src="./static/images/computer.jpg">
-            <h1 class="display-4">This is a brand new screen!</h1>
-            <p class="lead">This is screen includes bootstrap, fontawesome, jquery, and links to your own custom js and css files!</p>
+            <img class="img-fluid" src="./static/images/zodiac.jpg">
+            <h1 class="display-4">Every Day is Zodiac Day</h1>
+            <!-- <p class="lead">This is screen includes bootstrap, fontawesome, jquery, and links to your own custom js and css files!</p> -->
+            <form>
+              <div class="form-group">
+                <label for="name-input">Name</label>
+                <input class="form-control" id="name-input" placeholder="John Smith" type="text" required>
+              </div>
+              <div class="form-group">
+                <label for="birth-input">Date of Birth</label>
+                <input class="form-control" id="birth-input" type="date" required>
+              </div>
+              <button class="btn btn-primary float-right" id="add-user-btn">Submit</button>
+            </form>
           </div>
         </div>
       </div>
@@ -30,6 +41,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <script src="./static/javascript/scripts.js"></script>
   </body>
 </html>
