@@ -1,10 +1,11 @@
-const config = {
-  apiKey: 'AIzaSyCbaDBRoB73Wo-g9jMMjRNXXB7l8PuQjZQ',
-  authDomain: 'project-one-f75c6.firebaseapp.com',
-  databaseURL: 'https://project-one-f75c6.firebaseio.com',
-  projectId: 'project-one-f75c6',
-  storageBucket: 'project-one-f75c6.appspot.com',
-  messagingSenderId: '272761884868',
+ // Initialize Firebase
+ var config = {
+  apiKey: "AIzaSyBzKFQGZSMNyfwDCAqpdgRL1MgRiTWoAYY",
+  authDomain: "zodiac-friends-yo.firebaseapp.com",
+  databaseURL: "https://zodiac-friends-yo.firebaseio.com",
+  projectId: "zodiac-friends-yo",
+  storageBucket: "zodiac-friends-yo.appspot.com",
+  messagingSenderId: "67690482617"
 };
 firebase.initializeApp(config);
 
