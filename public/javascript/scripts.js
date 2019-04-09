@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-console.warn('Project One JS Initialized');
-=======
-// 1. Initialize Firebase
 const config = {
   apiKey: 'AIzaSyCbaDBRoB73Wo-g9jMMjRNXXB7l8PuQjZQ',
   authDomain: 'project-one-f75c6.firebaseapp.com',
@@ -45,4 +41,3 @@ $('#add-user-btn').on('click', (event) => {
   $('#name-input').val('');
   $('#birth-input').val('');
 });
->>>>>>> 8b04493a851a702adf5a53261c896d2527786838
