@@ -1,4 +1,3 @@
-// 1. Initialize Firebase
 const config = {
   apiKey: 'AIzaSyCbaDBRoB73Wo-g9jMMjRNXXB7l8PuQjZQ',
   authDomain: 'project-one-f75c6.firebaseapp.com',
