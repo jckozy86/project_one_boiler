@@ -10,14 +10,19 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
+var userName = ""
+var userBirth = ""
+var userZodiac = ""
+
 // 2. Button for adding users
 $('#add-user-btn').on('click', (event) => {
   event.preventDefault();
 
   // Grabs user input
-  const userName = $('#name-input').val().trim();
-  const userBirth = $('#birth-input').val().trim();
+  userName = $('#name-input').val().trim();
+  userBirth = $('#birth-input').val().trim();
 
+  displayZodiacSign()
   // user Info
   // console.log('userStart: ' + userStart);
 
@@ -25,6 +30,7 @@ $('#add-user-btn').on('click', (event) => {
   const newuser = {
     name: userName,
     birth: userBirth,
+    zodiac: userZodiac,
     dateAdded: firebase.database.ServerValue.TIMESTAMP,
   };
 
@@ -41,3 +47,119 @@ $('#add-user-btn').on('click', (event) => {
   $('#name-input').val('');
   $('#birth-input').val('');
 });
+
+function displayZodiacSign() {
+
+
+ /* var userBirthConverted = moment(userBirth).format("MM/DD")
+
+ console.log("Before the date format: "+moment(userBirth).format("MM/DD"))
+ console.log("After the date format: "+userBirthConverted )
+ // moment('01/01/2016', 'MM/DD/YYYY').isBefore(moment())
+console.log(moment(userBirth, "MM/DD/YYYY").format("MM/DD"))
+console.log(moment("03/21", "MM/DD"))
+  console.log(moment(userBirth, "MM/DD").isBefore(moment("03/21", "MM/DD"))) */
+
+  var userMonth = parseInt(moment(userBirth).format("M"))
+  var userDay = parseInt(moment(userBirth).format("D"))
+
+ if (userMonth == 1) {
+    if (userDay >= 20) {
+      userZodiac = "Aquarius"
+    } else {
+      userZodiac = "Capricorn"
+    }
+ }
+
+ else if (userMonth == 2) {
+  if (userDay >= 19) {
+    userZodiac = "Pisces"
+  } else {
+    userZodiac = "Aquarius"
+  }
+}
+
+else if (userMonth == 3) {
+  if (userDay >= 21) {
+    userZodiac = "Aries"
+  } else {
+    userZodiac = "Pisces"
+  }
+}
+
+else if (userMonth == 4) {
+  if (userDay >= 20) {
+    userZodiac = "Taurus"
+  } else {
+    userZodiac = "Aries"
+  }
+}
+
+else if (userMonth == 5) {
+  if (userDay >= 21) {
+    userZodiac = "Gemini"
+  } else {
+    userZodiac = "Taurus"
+  }
+}
+
+else if (userMonth == 6) {
+  if (userDay >= 21) {
+    userZodiac = "Cancer"
+  } else {
+    userZodiac = "Gemini"
+  }
+}
+
+else if (userMonth == 7) {
+  if (userDay >= 23) {
+    userZodiac = "Leo"
+  } else {
+    userZodiac = "Cancer"
+  }
+}
+
+else if (userMonth == 8) {
+  if (userDay >= 23) {
+    userZodiac = "Virgo"
+  } else {
+    userZodiac = "Leo"
+  }
+}
+
+else if (userMonth == 9) {
+  if (userDay >= 23) {
+    userZodiac = "Libra"
+  } else {
+    userZodiac = "Virgo"
+  }
+}
+
+else if (userMonth == 10) {
+  if (userDay >= 23) {
+    userZodiac = "Scorpio"
+  } else {
+    userZodiac = "Libra"
+  }
+}
+
+else if (userMonth == 11) {
+  if (userDay >= 22) {
+    userZodiac = "Sagittarius"
+  } else {
+    userZodiac = "Scorpio"
+  }
+}
+
+else if (userMonth == 12) {
+  if (userDay >= 22) {
+    userZodiac = "Capricorn"
+  } else {
+    userZodiac = "Sagittarius"
+  }
+}
+
+console.log("User zodiac is: " + userZodiac)
+}
+
+
