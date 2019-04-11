@@ -1,3 +1,49 @@
 body {
-  background-color: darkgray;
+  background-image: url("https://media1.giphy.com/media/TxVVB6PfWMjE4/giphy.gif");
+  background-size: auto;
+}
+#infoText {
+  font-family: 'Baloo Chettan', cursive;
+  /* color: burlywood; */
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 25px;
+  color: rgba(25, 0, 255, 0.438)
+}
+#infoText :hover {
+  color:red;
+}
+#birthdayText {
+  text-align: center;
+  position: relative;
+  color: white;
+  bottom: 25px;
+}
+#userInput {
+  color: red;
+  background: black;
+  width: 500px;
+}
+.jumbotron {
+  width: 1000px;
+  background-color: rgba(240, 248, 255, 0);
+  margin-left: 200px;
+  color: white;
+  font-family: 'Baloo Chettan', cursive;
+  /* color: burlywood; */
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 25px;
+  color: rgba(25, 0, 255, 0.438)
+}
+.display-4 {
+  text-align: center;
+  bottom: 50px;
+  position: relative;
+}
+.card-title {
+  color: red;
+}
+#bold {
+  color: red;
 }
