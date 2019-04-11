@@ -23,7 +23,10 @@ $('#add-user-btn').on('click', (event) => {
   userName = $('#name-input').val().trim();
   userBirth = $('#birth-input').val().trim();
 
+  findZodiacSign();
+  apiCall();
   displayZodiacSign();
+
   // user Info
   // console.log('userStart: ' + userStart);
 
@@ -49,16 +52,8 @@ $('#add-user-btn').on('click', (event) => {
   $('#birth-input').val('');
 });
 
-function displayZodiacSign() {
-  /* var userBirthConverted = moment(userBirth).format("MM/DD")
 
- console.log("Before the date format: "+moment(userBirth).format("MM/DD"))
- console.log("After the date format: "+userBirthConverted )
- // moment('01/01/2016', 'MM/DD/YYYY').isBefore(moment())
-console.log(moment(userBirth, "MM/DD/YYYY").format("MM/DD"))
-console.log(moment("03/21", "MM/DD"))
-  console.log(moment(userBirth, "MM/DD").isBefore(moment("03/21", "MM/DD"))) */
-
+function findZodiacSign() {
   const userMonth = parseInt(moment(userBirth).format('M'));
   const userDay = parseInt(moment(userBirth).format('D'));
 
@@ -137,4 +132,31 @@ console.log(moment("03/21", "MM/DD"))
   }
 
   console.log(`User zodiac is: ${userZodiac}`);
+}
+
+function displayZodiacSign() {
+  console.log('displaying zodiac sign');
+}
+
+function apiCall() {
+  const zodiac = userZodiac;
+  // var queryURL = "https://theastrologer-api.herokuapp.com/api/horoscope/" + zodiac.toLowerCase() + "/today"
+
+  const queryURL = `https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com/horoscope/today/${zodiac.toLowerCase()}`;
+  console.log(queryURL);
+
+  $.ajax({
+    url: queryURL,
+    // dataType: "jsonp",
+    method: 'GET',
+  }).then((response) => {
+    console.log('got something');
+    const horoscopeResult = response.horoscope;
+
+    const horoscopeDiv = $('<div>');
+    const p = $('<p>').text(`Today's Horoscope: ${horoscopeResult}`);
+
+    horoscopeDiv.append(p);
+    $('#horoscope-view').prepend(horoscopeDiv);
+  });
 }
