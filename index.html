@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
   </head>
   <body>
     <!-- this is the top part so like where they can enter birthday -->
@@ -18,15 +20,20 @@
     <div class="jumbotron">
         <h1 class="display-4">Are You Ready To Find Out Your Sign?</h1>
         <h1 class="display-4">Enter Your Birthday</h1>
-        <form action="/action_page.php">
+        <form action="">
           Birthday:
-          <input type="date" name="bday">
-          <input type="submit" value="Send">
+          <input type="date" name="bday" id="birth-input">
+          <input type="submit" value="Send" id="submit-button">
         </form>
       </div>
       <div class="container">
-          <!-- I guess you guys can put the horescope here maybe?-->
+        <div class="row">
+          <div class="col-5" id="gif-view">
+          </div>
+          <div class="col-7" id="horoscope-view">
+          </div>
         </div>
+      </div>
       <!-- these are all the cards that hold the zodiac info -->
       <div class="card-group">
           <div class="card">
@@ -189,14 +196,8 @@
                       <br><h6 id="bold">Pisces dislikes:</h6> Know-it-all, being criticized, the past coming back to haunt, cruelty of any kind</p>
                 </div>
               </div>
-<<<<<<< HEAD
-              <button class="btn btn-primary float-right" id="add-user-btn">Submit</button>
             </form>
-            <div id="horoscope-view">
-            </div>
           </div>
-=======
->>>>>>> d30f9fd39b8c458f6c5fb1e9c82ca5da702142ef
         </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

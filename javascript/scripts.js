@@ -16,19 +16,18 @@ let userBirth = '';
 let userZodiac = '';
 
 // 2. Button for adding users
-$('#add-user-btn').on('click', (event) => {
+$('#submit-button').on('click', (event) => {
   event.preventDefault();
 
   // Grabs user input
-  userName = $('#name-input').val().trim();
   userBirth = $('#birth-input').val().trim();
 
   findZodiacSign();
   apiCall();
-  displayZodiacSign();
+
 
   // user Info
-  // console.log('userStart: ' + userStart);
+ 
 
   // Creates local "newuser" object for holding user data
   const newuser = {
@@ -42,8 +41,8 @@ $('#add-user-btn').on('click', (event) => {
   database.ref().push(newuser);
 
   // Logs everything to console
-  // console.log('user Name: ' + newuser.name);
-  // console.log('user Birth: ' + newuser.birth);
+  // //console.log('user Name: ' + newuser.name);
+  // //console.log('user Birth: ' + newuser.birth);
 
   // alert("user successfully added");
 
@@ -131,11 +130,7 @@ function findZodiacSign() {
     }
   }
 
-  console.log(`User zodiac is: ${userZodiac}`);
-}
-
-function displayZodiacSign() {
-  console.log('displaying zodiac sign');
+  //console.log("User zodiac is:" + userZodiac);
 }
 
 function apiCall() {
@@ -143,20 +138,34 @@ function apiCall() {
   // var queryURL = "https://theastrologer-api.herokuapp.com/api/horoscope/" + zodiac.toLowerCase() + "/today"
 
   const queryURL = `https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com/horoscope/today/${zodiac.toLowerCase()}`;
-  console.log(queryURL);
+  //console.log(queryURL);
 
   $.ajax({
     url: queryURL,
     // dataType: "jsonp",
     method: 'GET',
   }).then((response) => {
-    console.log('got something');
     const horoscopeResult = response.horoscope;
 
     const horoscopeDiv = $('<div>');
     const p = $('<p>').text(`Today's Horoscope: ${horoscopeResult}`);
 
     horoscopeDiv.append(p);
-    $('#horoscope-view').prepend(horoscopeDiv);
+    $('#horoscope-view').html(horoscopeDiv);
   });
+  
+  var gif = userZodiac
+  const queryURL2 = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&limit=1&api_key=6cRH8TNjLjtSmUIM1WzjLPxBIlkUd8LX"
+  //console.log(queryURL2)
+  $.ajax({
+    url: queryURL2,
+    // dataType: "jsonp",
+    method: 'GET',
+  }).then((response) => {
+    const gifResult = response.data[0].images.fixed_height.url
+    const gifDiv = $('<img>').attr("src", gifResult)
+
+    $('#gif-view').html(gifDiv);
+  });
+
 }

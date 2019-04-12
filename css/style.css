@@ -47,3 +47,8 @@ body {
 #bold {
   color: red;
 }
+
+#horoscope-view {
+  color: whitesmoke;
+  font-size: 24px;
+}
