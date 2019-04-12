@@ -52,6 +52,7 @@ $('#add-user-btn').on('click', (event) => {
   $('#birth-input').val('');
 });
 
+
 function findZodiacSign() {
   const userMonth = parseInt(moment(userBirth).format('M'));
   const userDay = parseInt(moment(userBirth).format('D'));
