@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project One</title>
+    <meta name="description" content="Project 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  </head>
+  <body>
+    <!-- this is the top part so like where they can enter birthday -->
+    <div id="infoText">
+      <h1>Welcome To The Zodiac And Horoscope Finder</h1>
+    </div>
+    <div class="jumbotron">
+        <h1 class="display-4">Are You Ready To Find Out Your Sign?</h1>
+        <h1 class="display-4">Enter Your Birthday</h1>
+        <form action="">
+          Birthday:
+          <input type="date" name="bday" id="birth-input">
+          <input type="submit" value="Send" id="submit-button">
+        </form>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-5" id="gif-view">
+          </div>
+          <div class="col-7" id="horoscope-view">
+          </div>
+        </div>
+      </div>
+      <!-- these are all the cards that hold the zodiac info -->
+      <div class="card-group">
+          <div class="card">
+            <img src="https://www.listland.com/wp-content/uploads/2016/03/10-Reasons-Aries-is-the-Worst-Astrological-Sign.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" id="names">Aries</h5>
+              <p class="card-text"><h6 id="bold">Strengths:</h6> Courageous, determined, confident, enthusiastic, optimistic, honest, passionate <br>
+
+                  <br><h6 id="bold">Weaknesses:</h6> Impatient, moody, short-tempered, impulsive, aggressive <br>
+
+                  <br><h6 id="bold">Aries likes:</h6> Comfortable clothes, taking on leadership roles, physical challenges, individual sports <br>
+
+                  <br><h6 id="bold">Aries dislikes:</h6> Inactivity, delays, work that does not use one's talents</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://res.cloudinary.com/teepublic/image/private/s--MHxInuD1--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1539743896/production/designs/3333805_0.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" id="names">Taurus</h5>
+              <p class="card-text"><h6 id="bold">Strengths:</h6> Reliable, patient, practical, devoted, responsible, stable<br>
+
+                  <br><h6 id="bold">Weaknesses:</h6> Stubborn, possessive, uncompromising<br>
+
+                  <br><h6 id="bold">Taurus likes:</h6> Gardening, cooking, music, romance, high quality clothes, working with hands<br>
+
+                  <br><h6 id="bold">Taurus dislikes:</h6> Sudden changes, complications, insecurity of any kind, synthetic fabrics</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="http://www.astrologyhub.com/wp-content/uploads/gemini-810x810.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Gemini</h5>
+              <p class="card-text"><h6 id="bold">Strengths: </h6>Gentle, affectionate, curious, adaptable, ability to learn quickly and exchange ideas <br>
+
+                  <br><h6 id="bold">Weaknesses:</h6> Nervous, inconsistent, indecisive <br>
+
+                  <br><h6 id="bold">Gemini likes:</h6> Music, books, magazines, chats with nearly anyone, short trips around the town <br>
+
+                  <br><h6 id="bold">Gemini dislikes:</h6> Being alone, being confined, repetition and routine</p>
+            </div>
+          </div>
+          <div class="card-group">
+              <div class="card">
+                  <img src="http://www.astrologyhub.com/wp-content/uploads/cancer-810x810.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title" id="names">Cancer</h5>
+                    <p class="card-text"><h6 id="bold">Strengths:</h6> Tenacious, highly imaginative, loyal, emotional, sympathetic, persuasive<br>
+
+                        <br><h6 id="bold">Weaknesses:</h6> Moody, pessimistic, suspicious, manipulative, insecure<br>
+
+                        <br><h6 id="bold">Cancer likes:</h6> Art, home-based hobbies, relaxing near or in water, helping loved ones, a good meal with friends<br>
+
+                        <br><h6 id="bold">Cancer dislikes:</h6> Strangers, any criticism of Mom, revealing of personal life</p>
+                  </div>
+                </div>
+              <div class="card">
+                  <img src="https://res.cloudinary.com/teepublic/image/private/s--HVhTSavn--/t_Preview/b_rgb:000000,c_limit,f_jpg,h_630,q_90,w_630/v1526889085/production/designs/2708716_0.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title" id="names">Leo</h5>
+                    <p class="card-text"><h6 id="bold">Strengths:</h6> Creative, passionate, generous, warm-hearted, cheerful, humorous<br>
+
+                        <br><h6 id="bold">Weaknesses:</h6> Arrogant, stubborn, self-centered, lazy, inflexible<br>
+
+                        <br><h6 id="bold">Leo likes:</h6> Theater, taking holidays, being admired, expensive things, bright colors, fun with friends<br>
+
+                        <br><h6 id="bold">Leo dislikes:</h6> Being ignored, facing difficult reality, not being treated like a king or queen</p>
+                  </div>
+                </div>
+              <div class="card">
+                  <img src="https://res.cloudinary.com/teepublic/image/private/s--YOEMdfLG--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1510484287/production/designs/2047705_1.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title" id="names">Virgo</h5>
+                    <p class="card-text"><h6 id="bold">Strengths:</h6> Loyal, analytical, kind, hardworking, practical<br>
+
+                        <br><h6 id="bold">Weaknesses:</h6> Shyness, worry, overly critical of self and others, all work and no play<br>
+
+                        <br><h6 id="bold">Virgo likes:</h6> Animals, healthy food, books, nature, cleanliness<br>
+
+                        <br><h6 id="bold">Virgo dislikes:</h6> Rudeness, asking for help, taking center stage</p>
+                  </div>
+               </div>
+          </div>
+          <div class="card-group">
+              <div class="card">
+                  <img src="https://astrofix.net/wp-content/uploads/2017/12/libra-scales-zodiac-astrology.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Libra</h5>
+                    <p class="card-text"><h6 id="bold">Strengths:</h6> Cooperative,diplomatic, gracious, fair-minded, social<br>
+
+                        <br><h6 id="bold">Weaknesses:</h6> Indecisive, avoids confrontations, will carry a grudge, self-pity<br>
+
+                        <br><h6 id="bold">Libra likes:</h6> Harmony, gentleness, sharing with others, the outdoors<br>
+
+                        <br><h6 id="bold">Libra dislikes:</h6> Violence, injustice, loudmouths, conformity</p>
+                  </div>
+                </div>
+              <div class="card">
+                  <img src="https://pixfeeds.com/images/astrology/scorpio/1280-521052463-set-neon-signs-of-the-zodiac-scorpio.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Scorpio</h5>
+                    <p class="card-text"><h6 id="bold">Strengths:</h6> Resourceful, brave, passionate, stubborn, a true friend<br>
+
+                        <br><h6 id="bold">Weaknesses:</h6> Distrusting, jealous, secretive, violent<br>
+
+                        <br><h6 id="bold">Scorpio likes:</h6> Truth, facts, being right, longtime friends, teasing, a grand passion<br>
+
+                        <br><h6 id="bold">Scorpio dislikes:</h6> Dishonesty, revealing secrets, passive people</p>
+                  </div>
+                </div>
+              <div class="card">
+                  <img src="http://3.bp.blogspot.com/-uITF68BHC9o/TekQ6nYR6LI/AAAAAAAAGEc/ezZbxlAmTBc/s320/sagittarius-sign_www.nowlix.com_astrology_zodiac_logo_symbol%2B3.gif" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">SAGITTARIUS</h5>
+                    <p class="card-text"><h6 id="bold">Strengths:</h6> Generous, idealistic, great sense of humor<br>
+
+                       <br><h6 id="bold">Weaknesses:</h6> Promises more than can deliver, very impatient, will say anything no matter how undiplomatic<br>
+
+                        <br><h6 id="bold">Sagittarius likes:</h6> Freedom, travel, philosophy, being outdoors<br>
+
+                        <br><h6 id="bold">Sagittarius dislikes:</h6> Clingy people, being constrained, off-the-wall theories, details</p>
+                  </div>
+                </div>
+          </div>
+            <div class="card">
+                <img src="https://www.almanac.com/sites/default/files/styles/primary_image_in_article/public/image_nodes/zodiac-capricorn.jpg?itok=UNXW1CEZ" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">CAPRICORN</h5>
+                  <p class="card-text"><h6 id="bold">Strengths:</h6> Responsible, disciplined, self-control, good managers<br>
+
+                      <br><h6 id="bold">Weaknesses:</h6> Know-it-all, unforgiving, condescending, expecting the worst<br>
+
+                      <br><h6 id="bold">Capricorn likes:</h6> Family, tradition, music, understated status, quality craftsmanship<br>
+
+                      <br><h6 id="bold">Capricorn dislikes:</h6> Almost everything at some point</p>
+                </div>
+              </div>
+            <div class="card">
+                <img src="https://pixfeeds.com/images/astrology/1280-637094226-aquarius-zodiac-sign.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">AQUARIUS</h5>
+                  <p class="card-text"><h6 id="bold">Strengths:</h6> Progressive, original, independent, humanitarian<br>
+
+                      <br><h6 id="bold">Weaknesses:</h6> Runs from emotional expression, temperamental, uncompromising, aloof<br>
+
+                      <br><h6 id="bold">Aquarius likes:</h6> Fun with friends, helping others, fighting for causes, intellectual conversation, a good listener<br>
+
+                      <br><h6 id="bold">Aquarius dislikes:</h6> Limitations, broken promises, being lonely, dull or boring situations, people who disagree with them</p>
+                </div>
+              </div>
+            <div class="card">
+                <img src="https://res.cloudinary.com/teepublic/image/private/s--vme6A9Vi--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1539743644/production/designs/3333783_0.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">PISCES</h5>
+                    <p class="card-text"><h6 id="bold">Strengths:</h6> Compassionate, artistic, intuitive, gentle, wise, musical<br>
+
+                      <br><h6 id="bold">Weaknesses:</h6> Fearful, overly trusting, sad, desire to escape reality, can be a victim or a martyr<br>
+
+                      <br><h6 id="bold">Pisces likes:</h6> Being alone, sleeping, music, romance, visual media, swimming, spiritual themes<br>
+
+                      <br><h6 id="bold">Pisces dislikes:</h6> Know-it-all, being criticized, the past coming back to haunt, cruelty of any kind</p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./javascript/scripts.js"></script>
+  </body>
+</html>
